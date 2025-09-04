@@ -1,3 +1,5 @@
 
 *.csv
 /env
+*.sqlite3
+*.pickle
