@@ -237,9 +237,21 @@ def size(y_lower, y_upper, mode: Literal['mean', 'median'] = 'mean'):
             return np.mean(abs(y_upper - y_lower))
         
 def plot_scatter(df, var_x, var_y, color_var, title, x_label, y_label, cmap: str = "viridis"):
+    """
+    Plots a colored scatterplot 
+
+    Parameters:
+        df (DataFrame): Pandas dataframe cotaining values to plot
+        var_x (str): Variable x
+        var_y (str): Variable y
+        color_var (str): Variable to use for coloring
+        title (str): Title of the plot
+        x_label (str): Lable of variable x 
+        y_label (str): Lable of variable y
+        cmap (str): Colormap to use for plotting
+    """
     plt.figure(figsize=(12, 8))
     plt.scatter(df[var_x], df[var_y], c=df[color_var], s=8, cmap=cmap)
-    plt.title("Predicted rh98 values")
     plt.colorbar()
     plt.title(title)
     plt.xlabel(x_label)
